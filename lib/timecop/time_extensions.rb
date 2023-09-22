@@ -19,15 +19,17 @@ class Time #:nodoc:
     alias_method :new_without_mock_time, :new
 
     def new_with_mock_time(*args, **kwargs)
-      if args.size <= 0
-        now(*args)
-      else
+      # if args.size <= 0
+# p args
+# p kwargs
+      #   now(*args)
+      # else
         if kwargs == {}
           new_without_mock_time(*args)
         else
           new_without_mock_time(*args, **kwargs)
         end
-      end
+      # end
     end
 
     alias_method :new, :new_with_mock_time
